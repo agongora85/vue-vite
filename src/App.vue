@@ -51,10 +51,11 @@
       {{ fruta.name }} - {{ fruta.description }} - {{ fruta.price }}
     </li>
   </ul>
+  <p>Aquí va el arreglo de objetos</p>
   <ul>
-    <li v-for="(value, propiedad, index) in objetoFruta":key="value">
-      {{ index }} - {{ propiedad }} : {{ value }}
-    </li>
+    <template v-for="item in objetoFruta" :key="item.name">
+      <li v-if="item.id > 0">{{ item.name }}</li>
+    </template>
   </ul>
 </template>
 <style>
